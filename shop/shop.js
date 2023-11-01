@@ -2,7 +2,7 @@ const productList = document.getElementById("product-list");
 
 const apiUrl = `https://localhost:7199/Product/GetAllProduct`;
 
-fetch(apiUrl)
+ fetch(apiUrl)
   .then((respone) => respone.json())
   // console.log("respone: >>>>>" + respone)
   .then((data) => {
@@ -17,18 +17,17 @@ fetch(apiUrl)
                       <div class="block-4 text-center border">
                         <figure class="block-4-image">
                         <a href="productDetail.html?productID=${shop.id}">
-                        <img src="${shop.image}" 
+                        <img src="/images/cloth_1.jpg" 
                         alt="${shop.image}" class="img-fluid"></a>
                         </figure>
                         <div class="block-4-text p-4">
                           <h3><a href="productDetail.html?productID=${shop.id}">
                           ${shop.name}</a></h3>
-                          <p class="mb-0">${shop.description}</p>
-                          <p class="text-primary font-weight-bold">${shop.cost}</p>
+                          <p class="mb-0">${shop.catagories}</p>
+                          <p class="text-primary font-weight-bold">${shop.price}</p>
                         </div>
                       </div>
-                  </div>
-                          `;
+                  </div>`;
       productList.appendChild(shopAll);
     });
   })
